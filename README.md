@@ -72,5 +72,44 @@ python src/neo4j_loader.py
 q) Quit
 ```
 
+---
+
+## Project 2: MapReduce Analysis
+
+This project extends the HetioNet analysis with **MapReduce** implementations to answer three specific questions about drugs, genes, and diseases.
+
+### MapReduce Questions Answered
+
+1. **Q1 - Drug-Gene and Drug-Disease Associations**: For each drug, calculate (a) how many genes are associated with it and (b) how many diseases are associated with it. Return top 5 sorted by gene count.
+
+2. **Q2 - Disease Distribution by Drug Count**: Determine how many diseases are linked to exactly 1 drug, exactly 2 drugs, exactly 3 drugs, etc. Return top 5 sorted by number of diseases.
+
+3. **Q3 - Top Drugs by Gene Association**: Identify the drugs with the highest number of associated genes and return the top 5 drug names.
+
+### Running MapReduce Analysis
+
+```bash
+# Run MapReduce jobs and generate report
+python generate_report.py
+```
+
+This will create `PROJECT2_REPORT.md` with detailed analysis results.
+
+### New Files Added (Project 2)
+
+- **`src/mapreduce_jobs.py`**: Core MapReduce implementation with map/reduce functions for each question
+- **`generate_report.py`**: Script to execute all MapReduce jobs and generate comprehensive report
+
+### MapReduce Implementation
+
+The MapReduce pattern is implemented with three phases:
+1. **Map Phase**: Process each edge and emit (key, value) pairs
+2. **Shuffle Phase**: Group values by key
+3. **Reduce Phase**: Aggregate values for each key
+
+See `PROJECT2_REPORT.md` for detailed results and analysis.
+
+---
+
 ## Acknowledgements
 This project was completed independently, with assistance from ChatGPT and Cursor AI for conceptual explanation and debugging guidance.
